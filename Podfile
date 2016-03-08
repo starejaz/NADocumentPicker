@@ -5,5 +5,5 @@ use_frameworks!
 
 target 'NADocumentPicker' do
     pod 'BrightFutures'
-    pod 'NACommonUtils', :git => 'git@github.com:NickAger/NACommonUtils.git'
+    pod 'NACommonUtils'
 end
