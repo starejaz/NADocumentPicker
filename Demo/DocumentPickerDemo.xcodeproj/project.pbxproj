@@ -38,6 +38,7 @@
 		848ED5081C8F055400EC5B59 /* iCloudException@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iCloudException@2x.png"; sourceTree = "<group>"; };
 		848ED5091C8F055400EC5B59 /* iCloudFix@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iCloudFix@1x.png"; sourceTree = "<group>"; };
 		848ED50A1C8F055400EC5B59 /* iCloudFix@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iCloudFix@2x.png"; sourceTree = "<group>"; };
+		848ED50F1C8F07A300EC5B59 /* DocumentPickerDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DocumentPickerDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 		848ED4E71C8EFFEA00EC5B59 /* DocumentPickerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				848ED50F1C8F07A300EC5B59 /* DocumentPickerDemo.entitlements */,
 				848ED4E81C8EFFEA00EC5B59 /* AppDelegate.swift */,
 				848ED4EA1C8EFFEA00EC5B59 /* ViewController.swift */,
 				848ED4EC1C8EFFEA00EC5B59 /* Main.storyboard */,
@@ -132,6 +134,12 @@
 				TargetAttributes = {
 					848ED4E41C8EFFEA00EC5B59 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = Q32H5S9R95;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -289,10 +297,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DocumentPickerDemo/DocumentPickerDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DocumentPickerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RocketBox-Ltd.DocumentPickerDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -300,10 +312,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DocumentPickerDemo/DocumentPickerDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DocumentPickerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RocketBox-Ltd.DocumentPickerDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

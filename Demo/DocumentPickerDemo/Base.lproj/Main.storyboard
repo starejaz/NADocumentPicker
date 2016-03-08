@@ -19,19 +19,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbz-wF-Cwr">
-                                <rect key="frame" x="20" y="78" width="37" height="21"/>
+                                <rect key="frame" x="20" y="78" width="37" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iCloudException.png" translatesAutoresizingMaskIntoConstraints="NO" id="bmQ-n9-oof">
-                                <rect key="frame" x="20" y="118" width="560" height="128"/>
+                                <rect key="frame" x="20" y="118.5" width="560" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Jpx-eV-YDD"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If the see the above exception you need to enable iCloud:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3K-oy-l58">
-                                <rect key="frame" x="20" y="256" width="560" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If the see the above exception you need to enable iCloud Documents:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="e3K-oy-l58">
+                                <rect key="frame" x="20" y="256.5" width="560" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,6 +41,9 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Bd-2tT">
                                 <rect key="frame" x="20" y="40" width="159" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="SPA-28-gCb"/>
+                                </constraints>
                                 <state key="normal" title="Open Document Picker"/>
                                 <connections>
                                     <action selector="pickerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lsg-Pz-v7f"/>
@@ -59,7 +62,7 @@
                             <constraint firstItem="e3K-oy-l58" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="UDS-2Z-k6X"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e3K-oy-l58" secondAttribute="trailing" id="Uyg-yd-KlE"/>
                             <constraint firstItem="5Ed-Bd-2tT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="apc-wZ-hDi"/>
-                            <constraint firstItem="bmQ-n9-oof" firstAttribute="top" secondItem="sbz-wF-Cwr" secondAttribute="bottom" constant="20" id="ayd-dt-pTl"/>
+                            <constraint firstItem="bmQ-n9-oof" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sbz-wF-Cwr" secondAttribute="bottom" constant="20" id="ayd-dt-pTl"/>
                             <constraint firstItem="TYS-ba-RCc" firstAttribute="top" secondItem="e3K-oy-l58" secondAttribute="bottom" constant="8" id="iZ9-gl-1xH"/>
                             <constraint firstItem="bmQ-n9-oof" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mjF-Uc-q2o"/>
                             <constraint firstItem="TYS-ba-RCc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tQy-2I-384"/>
