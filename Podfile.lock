@@ -1,25 +1,16 @@
 PODS:
   - BrightFutures (3.3.0):
     - Result (~> 1.0)
-  - NACommonUtils (1.0.2)
+  - NACommonUtils (1.0.3)
   - Result (1.0.2)
 
 DEPENDENCIES:
   - BrightFutures
-  - NACommonUtils (from `git@github.com:NickAger/NACommonUtils.git`)
-
-EXTERNAL SOURCES:
-  NACommonUtils:
-    :git: git@github.com:NickAger/NACommonUtils.git
-
-CHECKOUT OPTIONS:
-  NACommonUtils:
-    :commit: 3db0f63f68672a7a4a22cd95f57708b89a350074
-    :git: git@github.com:NickAger/NACommonUtils.git
+  - NACommonUtils
 
 SPEC CHECKSUMS:
   BrightFutures: f4b491b3107487a0469973a74f81f334eb0ed60a
-  NACommonUtils: 0a0577d8320ba9bcc901af571c5f966a94bd8577
+  NACommonUtils: f42813a50c5896ed98931464b6c8be1e24286c79
   Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
 
 COCOAPODS: 0.39.0
