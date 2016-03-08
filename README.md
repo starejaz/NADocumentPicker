@@ -6,6 +6,20 @@
 
 ![](http://nickager.com/images/blog/DocumentPicker/filepicker-combined.jpg)
 
+## Usage
 
+```swift
+@IBAction func pickerButtonPressed(sender: UIButton) {
+    let urlPickedfuture = NADocumentPicker.show(from: sender, parentViewController: self)
 
-For details see [http://nickager.com/blog/2016/03/07/DocumentPicker](http://nickager.com/blog/2016/03/07/DocumentPicker)
+    urlPickedfuture.onSuccess { url in
+        print("URL: \(url)")
+    }
+}
+```
+
+`NADocumentPicker` returns a [Future](https://github.com/Thomvis/BrightFutures#examples). Hooking into `onSuccess` will provide the URL of the file choosen by the user.
+
+---
+
+For more detail see [http://nickager.com/blog/2016/03/07/DocumentPicker](http://nickager.com/blog/2016/03/07/DocumentPicker)
