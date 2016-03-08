@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://twitter.com/NickAger"
 
   s.platform     = :ios, "9.0"
-  s.source       = { :git => "https://github.com/NickAger/NADocumentPicker.git", :tag => "1.0.0" }
-  s.source_files = "NADocumentPicker/NADocumentPicker.swift"
+  s.source       = { :git => "https://github.com/NickAger/NADocumentPicker.git", :tag => "#{s.version}" }
+  s.source_files = "NADocumentPicker/**/NADocumentPicker.swift"
 
   s.framework  = "UIKit"
   s.dependency 'NACommonUtils', :git => 'git@github.com:NickAger/NACommonUtils.git'
