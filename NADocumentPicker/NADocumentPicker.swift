@@ -16,14 +16,18 @@ import NACommonUtils
 
 public enum NADocumentPickerErrors: ErrorType {
     case NoDocumentPicked
+    
+    func asAnyError() -> AnyError {
+        return AnyError(cause: self)
+    }
 }
 
 public class NADocumentPicker : NSObject {
     private let parentViewController: UIViewController
     private var keepInMemory: NADocumentPicker?
-    private let promise = Promise<NSURL, NADocumentPickerErrors>()
+    private let promise = Promise<NSURL, AnyError>()
 
-    public class func show(from view: UIView, parentViewController: UIViewController) -> Future<NSURL, NADocumentPickerErrors> {
+    public class func show(from view: UIView, parentViewController: UIViewController) -> Future<NSURL, AnyError> {
         let instance = NADocumentPicker(parentViewController: parentViewController)
         return instance.showDocumentProviderMenu(from: view, parentViewController: parentViewController)
     }
@@ -35,7 +39,7 @@ public class NADocumentPicker : NSObject {
         keepInMemoryUntilComplete()
     }
 
-    private func showDocumentProviderMenu(from view: UIView, parentViewController: UIViewController) -> Future<NSURL, NADocumentPickerErrors> {
+    private func showDocumentProviderMenu(from view: UIView, parentViewController: UIViewController) -> Future<NSURL, AnyError> {
         let activityOverlay = showActivityOverlayAddedTo(parentViewController.view)
         let documentProviderMenu = UIDocumentMenuViewController(documentTypes:[kUTTypePlainText as String], inMode: UIDocumentPickerMode.Open)
         documentProviderMenu.delegate = self
@@ -46,7 +50,7 @@ public class NADocumentPicker : NSObject {
 
         parentViewController.presentViewController(documentProviderMenu, animated: true, completion: {
             activityOverlay.removeFromSuperview()
-            print("\n</layout-errors>\nhttp://openradar.appspot.com/19385063\n")
+            print("\n</layout-errors>\nSee: http://openradar.appspot.com/19385063\n")
         })
 
         return promise.future
@@ -79,7 +83,7 @@ extension NADocumentPicker : UIDocumentMenuDelegate {
     }
 
     public func documentMenuWasCancelled(_: UIDocumentMenuViewController) {
-        promise.failure(NADocumentPickerErrors.NoDocumentPicked)
+        promise.failure(NADocumentPickerErrors.NoDocumentPicked.asAnyError())
     }
 }
 
@@ -90,6 +94,6 @@ extension NADocumentPicker : UIDocumentPickerDelegate {
     }
 
     public func documentPickerWasCancelled(_: UIDocumentPickerViewController) {
-        promise.failure(NADocumentPickerErrors.NoDocumentPicked)
+        promise.failure(NADocumentPickerErrors.NoDocumentPicked.asAnyError())
     }
 }
