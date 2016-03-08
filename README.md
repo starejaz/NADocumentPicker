@@ -18,7 +18,7 @@
 }
 ```
 
-`NADocumentPicker` returns a [Future](https://github.com/Thomvis/BrightFutures#examples). Hooking into `onSuccess` will provide the URL of the file choosen by the user.
+`NADocumentPicker` returns a [Future](https://github.com/Thomvis/BrightFutures#examples). Hooking into `onSuccess` provides the URL of the file choosen by the user.
 
 ---
 
