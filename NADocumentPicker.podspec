@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NADocumentPicker"
-  s.version          = "1.0.3"
+  s.version          = "1.0.4"
   s.summary          = "Encapsulates UIKit document picker UI"
 
   s.homepage         = "http://nickager.com/blog/2016/03/07/DocumentPicker"
