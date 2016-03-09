@@ -8,6 +8,8 @@
 
 ## Usage
 
+`NADocumentPicker.show(..)` returns a [`Future` ](https://github.com/Thomvis/BrightFutures#examples). Hooking into `onSuccess` provides the URL of the file choosen by the user:
+
 ```swift
 @IBAction func pickerButtonPressed(sender: UIButton) {
     let urlPickedfuture = NADocumentPicker.show(from: sender, parentViewController: self)
@@ -18,7 +20,11 @@
 }
 ```
 
-`NADocumentPicker` returns a [Future](https://github.com/Thomvis/BrightFutures#examples). Hooking into `onSuccess` provides the URL of the file choosen by the user.
+You can try-out `NADocumentPicker` demo project by using the cocoapod `try` option as:
+
+```
+$ pod try NADocumentPicker
+```
 
 ---
 
