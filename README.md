@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/NADocumentPicker.svg?style=flat)](http://cocoapods.org/pods/NADocumentPicker)
 [![Platform](https://img.shields.io/cocoapods/p/NADocumentPicker.svg?style=flat)](http://cocoapods.org/pods/NADocumentPicker)
 
-`NADocumentPicker` encapsulates UIKit document picker UI:
+`NADocumentPicker` encapsulates UIKit document picker UI; allowing the user to select iCloud documents (or documents from other providers), with a simple [`Future` ](https://github.com/Thomvis/BrightFutures) based API:
 
 ![](http://nickager.com/images/blog/DocumentPicker/filepicker-combined.jpg)
 
