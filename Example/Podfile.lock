@@ -1,13 +1,14 @@
 PODS:
-  - FBSnapshotTestCase (2.0.7):
-    - FBSnapshotTestCase/SwiftSupport (= 2.0.7)
-  - FBSnapshotTestCase/Core (2.0.7)
-  - FBSnapshotTestCase/SwiftSupport (2.0.7):
-    - FBSnapshotTestCase/Core
-  - NADocumentPicker (0.1.0)
+  - BrightFutures (3.3.0):
+    - Result (~> 1.0)
+  - NACommonUtils (1.0.3)
+  - NADocumentPicker (1.0.0):
+    - BrightFutures
+    - NACommonUtils
+    - Result (~> 1.0)
+  - Result (1.0.2)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase
   - NADocumentPicker (from `../`)
 
 EXTERNAL SOURCES:
@@ -15,7 +16,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
-  NADocumentPicker: fbacd33d97bd206212f658971e5a2870af2c833f
+  BrightFutures: f4b491b3107487a0469973a74f81f334eb0ed60a
+  NACommonUtils: f42813a50c5896ed98931464b6c8be1e24286c79
+  NADocumentPicker: a89ba4decec7aa6e682e31b61f0a5b9125986a24
+  Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
 
 COCOAPODS: 0.39.0

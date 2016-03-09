@@ -1,25 +1,31 @@
 {
   "name": "NADocumentPicker",
-  "version": "0.1.0",
-  "summary": "A short description of NADocumentPicker.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/NADocumentPicker",
+  "version": "1.0.0",
+  "summary": "Encapsulates UIKit document picker UI",
+  "homepage": "http://nickager.com/blog/2016/03/07/DocumentPicker",
   "license": "MIT",
   "authors": {
     "Nick Ager": "nick.ager@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/NADocumentPicker.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/NickAger/NADocumentPicker.git",
+    "tag": "1.0.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "NADocumentPicker": [
-      "Pod/Assets/*.png"
+  "frameworks": "UIKit",
+  "dependencies": {
+    "NACommonUtils": [
+
+    ],
+    "BrightFutures": [
+
+    ],
+    "Result": [
+      "~> 1.0"
     ]
   }
 }

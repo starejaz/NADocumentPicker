@@ -1,0 +1,28 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F3105CAD49CA8865BEA553486E3E8CCBA66A725D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F3105CAD49CA8865BEA553486E3E8CCBA66A725D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F7D8B920-F9F8-4D33-83CF-CD0E298B6121",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F3105CAD49CA8865BEA553486E3E8CCBA66A725D" : "NADocumentPicker-version1\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NADocumentPicker",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/NADocumentPicker.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NickAger\/NADocumentPicker.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F3105CAD49CA8865BEA553486E3E8CCBA66A725D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NickAger\/NADocumentPicker.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F3105CAD49CA8865BEA553486E3E8CCBA66A725D"
+    }
+  ]
+}

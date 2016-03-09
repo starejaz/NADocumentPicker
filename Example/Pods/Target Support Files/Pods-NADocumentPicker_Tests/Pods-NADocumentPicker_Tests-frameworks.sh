@@ -84,10 +84,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-NADocumentPicker_Tests/BrightFutures.framework"
+  install_framework "Pods-NADocumentPicker_Tests/NACommonUtils.framework"
   install_framework "Pods-NADocumentPicker_Tests/NADocumentPicker.framework"
-  install_framework "Pods-NADocumentPicker_Tests/FBSnapshotTestCase.framework"
+  install_framework "Pods-NADocumentPicker_Tests/Result.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-NADocumentPicker_Tests/BrightFutures.framework"
+  install_framework "Pods-NADocumentPicker_Tests/NACommonUtils.framework"
   install_framework "Pods-NADocumentPicker_Tests/NADocumentPicker.framework"
-  install_framework "Pods-NADocumentPicker_Tests/FBSnapshotTestCase.framework"
+  install_framework "Pods-NADocumentPicker_Tests/Result.framework"
 fi

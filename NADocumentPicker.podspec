@@ -17,4 +17,5 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
   s.dependency 'NACommonUtils'
   s.dependency 'BrightFutures'
+  s.dependency 'Result', '~> 1.0'
 end
