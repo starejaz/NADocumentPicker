@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = "Encapsulates UIKit document picker UI"
   spec.description = <<-DESC
                      Encapsulates UIKit document picker UI.
-                     Allows the user to select iCloud documents (or documents from other providers), with a simple Future based API
+                     Allows the user to select iCloud documents (Google Drive, One Drive, etc), with a simple Future based API
                    DESC
 
   s.homepage         = "http://nickager.com/blog/2016/03/07/DocumentPicker"
