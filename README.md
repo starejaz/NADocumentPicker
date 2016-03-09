@@ -1,6 +1,9 @@
 # NADocumentPicker
 
-[![CocoaPods compatible](https://img.shields.io/cocoapods/v/MBProgressHUD.svg?style=flat)](https://cocoapods.org/pods/MBProgressHUD) [![License: MIT](https://img.shields.io/cocoapods/l/MBProgressHUD.svg?style=flat)](http://opensource.org/licenses/MIT)
+<!-- [![CI Status](http://img.shields.io/travis/Nick Ager/NADocumentPicker.svg?style=flat)](https://travis-ci.org/Nick Ager/NADocumentPicker) -->
+[![Version](https://img.shields.io/cocoapods/v/NADocumentPicker.svg?style=flat)](http://cocoapods.org/pods/NADocumentPicker)
+[![License](https://img.shields.io/cocoapods/l/NADocumentPicker.svg?style=flat)](http://cocoapods.org/pods/NADocumentPicker)
+[![Platform](https://img.shields.io/cocoapods/p/NADocumentPicker.svg?style=flat)](http://cocoapods.org/pods/NADocumentPicker)
 
 `NADocumentPicker` encapsulates UIKit document picker UI:
 
@@ -25,6 +28,23 @@ You can try-out `NADocumentPicker` demo project by using the cocoapod `try` opti
 ```
 $ pod try NADocumentPicker
 ```
+
+## Installation
+
+NADocumentPicker is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "NADocumentPicker"
+```
+
+## Author
+
+Nick Ager, nick.ager@gmail.com
+
+## License
+
+NADocumentPicker is available under the MIT license. See the LICENSE file for more info.
 
 ---
 
