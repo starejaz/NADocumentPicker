@@ -25,14 +25,14 @@ public enum NADocumentPickerErrors: ErrorType {
 public class NADocumentPicker : NSObject {
     private let parentViewController: UIViewController
     private var keepInMemory: NADocumentPicker?
-    private let promise = Promise<NSURL, AnyError>()
+    /*private*/ let promise = Promise<NSURL, AnyError>()
 
     public class func show(from view: UIView, parentViewController: UIViewController) -> Future<NSURL, AnyError> {
         let instance = NADocumentPicker(parentViewController: parentViewController)
         return instance.showDocumentProviderMenu(from: view, parentViewController: parentViewController)
     }
 
-    private init(parentViewController: UIViewController) {
+    /*private*/ init(parentViewController: UIViewController) {
         self.parentViewController = parentViewController
         super.init()
 

@@ -1,29 +1,33 @@
 import UIKit
 import XCTest
-import NADocumentPicker
+@testable import NADocumentPicker
+import BrightFutures
 
 class Tests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
+    func testMemoryLeaks() {
+        let expectation = expectationWithDescription("Future will complete")
+        let vc = UIViewController()
+        weak var dp = NADocumentPicker(parentViewController: vc)
+        
+        if let dp = dp {
+            dp.promise.future.onComplete { [weak dp] _ in
+                XCTAssert(dp == nil, "Expect the instance of NADocumentPicker to have freed itself")
+                expectation.fulfill()
+            }
+
+            future { [weak dp] in
+                if let dp = dp {
+                    // simulate a failure on a background thread
+                    dp.promise.failure(NADocumentPickerErrors.NoDocumentPicked.asAnyError())
+                }
+            }
+        }
+        
+        waitForExpectationsWithTimeout(10) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
         }
     }
-    
 }
