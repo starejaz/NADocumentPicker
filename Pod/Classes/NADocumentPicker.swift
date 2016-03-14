@@ -14,6 +14,10 @@ import MobileCoreServices
 import BrightFutures
 import NACommonUtils
 
+/**
+ `NoDocumentPicked` is the error returned by the `Future`
+ from `show` when no document is choosen by the user.
+ */
 public enum NADocumentPickerErrors: ErrorType {
     case NoDocumentPicked
     
@@ -22,11 +26,28 @@ public enum NADocumentPickerErrors: ErrorType {
     }
 }
 
+/**
+ Encapsulates UIKit document picker UI, providing a simple API.
+ `show` is the only API entry.
+*/
 public class NADocumentPicker : NSObject {
     private let parentViewController: UIViewController
     private var keepInMemory: NADocumentPicker?
     /*private*/ let promise = Promise<NSURL, AnyError>()
-
+    
+    /**
+     Shows the document picker, returning a `Future` containing the document picked
+     or `NoDocumentPicked`.
+     
+     See also: 
+     - [nickager.com](http://nickager.com/blog/2016/03/07/DocumentPicker)
+     - [github](https://github.com/NickAger/NADocumentPicker)
+     
+     - Parameter view:  The view from which the popover document menu appears
+     - Parameter parentViewController: The associated parent view controller
+     
+     - Returns: A `Future` containing the document picked or `NoDocumentPicked`
+     */
     public class func show(from view: UIView, parentViewController: UIViewController) -> Future<NSURL, AnyError> {
         let instance = NADocumentPicker(parentViewController: parentViewController)
         return instance.showDocumentProviderMenu(from: view, parentViewController: parentViewController)
