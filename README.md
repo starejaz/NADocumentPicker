@@ -38,6 +38,15 @@ it, simply add the following line to your Podfile:
 pod "NADocumentPicker"
 ```
 
+## Configuration
+
+You need to ensure you give your application the following entitlements:
+
+* iCloud entitlement
+* iCloud containers entitlement
+
+![](\Example\NADocumentPicker\iCloudFix@2x.png)
+
 ## Author
 
 Nick Ager, nick.ager@gmail.com
