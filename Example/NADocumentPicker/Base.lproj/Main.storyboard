@@ -23,21 +23,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iCloudException.png" translatesAutoresizingMaskIntoConstraints="NO" id="bmQ-n9-oof">
-                                <rect key="frame" x="20" y="119" width="560" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Jpx-eV-YDD"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If the see the above exception you need to enable iCloud Documents:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="e3K-oy-l58">
-                                <rect key="frame" x="20" y="257" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="iCloudFix.png" translatesAutoresizingMaskIntoConstraints="NO" id="TYS-ba-RCc">
-                                <rect key="frame" x="20" y="285" width="560" height="315"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Bd-2tT">
                                 <rect key="frame" x="20" y="40" width="159" height="30"/>
                                 <constraints>
@@ -48,23 +33,35 @@
                                     <action selector="pickerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lsg-Pz-v7f"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DLr-eY-Oe1">
+                                <rect key="frame" x="20" y="114" width="560" height="466"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">See also:
+
+* NADocumentPicker on Github for details of the entitlements you need to add to your application - https://github.com/NickAger/NADocumentPicker
+* Blog post on http://nickager.com for details of the API - http://nickager.com/blog/2016/03/07/DocumentPicker</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sbz-wF-Cwr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5Sz-Xz-P6a"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="TYS-ba-RCc" secondAttribute="trailing" id="920-MM-DVF"/>
-                            <constraint firstItem="e3K-oy-l58" firstAttribute="top" secondItem="bmQ-n9-oof" secondAttribute="bottom" constant="10" id="9Ig-kU-Nr2"/>
+                            <constraint firstItem="DLr-eY-Oe1" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7J4-rf-z9h"/>
+                            <constraint firstItem="DLr-eY-Oe1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9Ws-AQ-QUg"/>
                             <constraint firstItem="sbz-wF-Cwr" firstAttribute="top" secondItem="5Ed-Bd-2tT" secondAttribute="bottom" constant="8" id="BU3-lq-Z3K"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bmQ-n9-oof" secondAttribute="trailing" id="FJp-wk-WKV"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TYS-ba-RCc" secondAttribute="bottom" id="Nua-ID-IV9"/>
                             <constraint firstItem="5Ed-Bd-2tT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="QHd-M2-ytb"/>
-                            <constraint firstItem="e3K-oy-l58" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="UDS-2Z-k6X"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="e3K-oy-l58" secondAttribute="trailing" id="Uyg-yd-KlE"/>
+                            <constraint firstItem="DLr-eY-Oe1" firstAttribute="top" secondItem="sbz-wF-Cwr" secondAttribute="bottom" constant="15" id="Tp4-jo-aFI"/>
                             <constraint firstItem="5Ed-Bd-2tT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="apc-wZ-hDi"/>
-                            <constraint firstItem="bmQ-n9-oof" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sbz-wF-Cwr" secondAttribute="bottom" constant="20" id="ayd-dt-pTl"/>
-                            <constraint firstItem="TYS-ba-RCc" firstAttribute="top" secondItem="e3K-oy-l58" secondAttribute="bottom" constant="8" id="iZ9-gl-1xH"/>
-                            <constraint firstItem="bmQ-n9-oof" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mjF-Uc-q2o"/>
-                            <constraint firstItem="TYS-ba-RCc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tQy-2I-384"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DLr-eY-Oe1" secondAttribute="bottom" constant="20" id="uTA-Op-IiE"/>
                         </constraints>
                     </view>
                     <connections>
@@ -76,8 +73,4 @@
             <point key="canvasLocation" x="669" y="548"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="iCloudException.png" width="1305" height="352"/>
-        <image name="iCloudFix.png" width="1140" height="399"/>
-    </resources>
 </document>
