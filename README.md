@@ -45,7 +45,13 @@ You need to ensure you give your application the following entitlements:
 * iCloud entitlement
 * iCloud containers entitlement
 
+See below:
+
 ![](Example/NADocumentPicker/iCloudFix@2x.png)
+
+If you haven't added these entitlements you will have a runtime exception as:
+
+> Application initializing document picker is missing the iCloud entitlement. Is com.apple.developer.icloud-container-identifiers set?
 
 ## Author
 
