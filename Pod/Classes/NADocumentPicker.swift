@@ -15,7 +15,9 @@ import BrightFutures
 import NACommonUtils
 
 /**
- `NoDocumentPicked` is the error returned by the `Future`
+ Error type for `NADocumentPicker`
+ 
+  - NoDocumentPicked: is the error returned by the `Future`
  from `show` when no document is choosen by the user.
  */
 public enum NADocumentPickerErrors: ErrorType {
