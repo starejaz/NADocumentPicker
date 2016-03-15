@@ -10,8 +10,8 @@ before_install:
 - rvm install 2.1.5
 - gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=Example
-- brew update || brew update
-- brew outdated xctool || brew upgrade xctool
+#- brew update || brew update
+#- brew outdated xctool || brew upgrade xctool
 script:
 - set -o pipefail && xcodebuild test -workspace Example/NADocumentPicker.xcworkspace -scheme NADocumentPicker-Test -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.2' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 - pod lib lint
