@@ -13,5 +13,6 @@ before_install:
 - brew update || brew update
 - brew outdated xctool || brew upgrade xctool
 script:
+- set -o pipefail && xctool -workspace Example/NADocumentPicker.xcworkspace -scheme NADocumentPicker -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.2' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 - set -o pipefail && xctool test -workspace Example/NADocumentPicker.xcworkspace -scheme NADocumentPicker-Test -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.2' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 - pod lib lint
