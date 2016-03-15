@@ -4,7 +4,6 @@
 
 language: objective-c
 osx_image: xcode7.2
-cache: cocoapods
 podfile: Example/Podfile
 before_install:
 - rvm install 2.1.5
@@ -13,6 +12,5 @@ before_install:
 - brew update || brew update
 - brew outdated xctool || brew upgrade xctool
 script:
-- set -o pipefail && xctool -workspace Example/NADocumentPicker.xcworkspace -scheme NADocumentPicker -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.2' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-- set -o pipefail && xctool test -workspace Example/NADocumentPicker.xcworkspace -scheme NADocumentPicker-Test -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.2' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- set -o pipefail && xctool clean test -workspace Example/NADocumentPicker.xcworkspace -scheme NADocumentPicker-Test -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.2' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 - pod lib lint
