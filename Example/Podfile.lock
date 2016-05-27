@@ -2,7 +2,7 @@ PODS:
   - BrightFutures (4.1.0):
     - Result (~> 2.0)
   - NACommonUtils (1.0.10)
-  - NADocumentPicker (1.0.8):
+  - NADocumentPicker (1.0.9):
     - BrightFutures
     - NACommonUtils
   - Result (2.0.0)
@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   BrightFutures: e18b83fd6fa8562ceb9902ee609f0de23b0ee110
   NACommonUtils: 6f32f31eae84e11448b1ab80ad8ed33e0230cff1
-  NADocumentPicker: 2b511e7a9ea34f65c22a5c98525f1e48a95a5574
+  NADocumentPicker: 1ebf59e3a8212e9034be38dcbf7d5ca0c77f1c9e
   Result: 9e75e1111c774c6ac594e14907b15057053a7959
 
 PODFILE CHECKSUM: cb75b773b52a0cd9b06a232aa52768463d7d3a09
