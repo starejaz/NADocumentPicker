@@ -47,6 +47,7 @@ public class NADocumentPicker : NSObject {
      
      - Parameter view:  The view from which the popover document menu appears
      - Parameter parentViewController: The associated parent view controller
+     - Parameter documentTypes: An array of document types to be opened, by default PlainText
      
      - Returns: A `Future` containing the document picked or `NoDocumentPicked`
      */
