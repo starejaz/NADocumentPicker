@@ -1,7 +1,8 @@
 {
   "name": "NADocumentPicker",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "summary": "Encapsulates UIKit document picker UI",
+  "description": "Encapsulates UIKit document picker UI.\nAllows the user to select iCloud documents (and Google Drive, One Drive, etc), with a simple Future based API",
   "homepage": "http://nickager.com/blog/2016/03/07/DocumentPicker",
   "license": "MIT",
   "authors": {
@@ -9,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/NickAger/NADocumentPicker.git",
-    "tag": "1.0.0"
+    "tag": "1.0.8"
   },
   "platforms": {
     "ios": "9.0"
@@ -23,9 +24,6 @@
     ],
     "BrightFutures": [
 
-    ],
-    "Result": [
-      "~> 1.0"
     ]
   }
 }

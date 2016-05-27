@@ -1,12 +1,11 @@
 PODS:
-  - BrightFutures (3.3.0):
-    - Result (~> 1.0)
-  - NACommonUtils (1.0.3)
-  - NADocumentPicker (1.0.0):
+  - BrightFutures (4.1.0):
+    - Result (~> 2.0)
+  - NACommonUtils (1.0.10)
+  - NADocumentPicker (1.0.8):
     - BrightFutures
     - NACommonUtils
-    - Result (~> 1.0)
-  - Result (1.0.2)
+  - Result (2.0.0)
 
 DEPENDENCIES:
   - NADocumentPicker (from `../`)
@@ -16,9 +15,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BrightFutures: f4b491b3107487a0469973a74f81f334eb0ed60a
-  NACommonUtils: f42813a50c5896ed98931464b6c8be1e24286c79
-  NADocumentPicker: a89ba4decec7aa6e682e31b61f0a5b9125986a24
-  Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
+  BrightFutures: e18b83fd6fa8562ceb9902ee609f0de23b0ee110
+  NACommonUtils: 6f32f31eae84e11448b1ab80ad8ed33e0230cff1
+  NADocumentPicker: 2b511e7a9ea34f65c22a5c98525f1e48a95a5574
+  Result: 9e75e1111c774c6ac594e14907b15057053a7959
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: cb75b773b52a0cd9b06a232aa52768463d7d3a09
+
+COCOAPODS: 1.0.0
