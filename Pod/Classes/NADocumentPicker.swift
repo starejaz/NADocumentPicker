@@ -50,9 +50,9 @@ public class NADocumentPicker : NSObject {
      
      - Returns: A `Future` containing the document picked or `NoDocumentPicked`
      */
-    public class func show(from view: UIView, parentViewController: UIViewController) -> Future<NSURL, AnyError> {
+    public class func show(from view: UIView, parentViewController: UIViewController, documentTypes: [String] = [kUTTypePlainText as String]) -> Future<NSURL, AnyError> {
         let instance = NADocumentPicker(parentViewController: parentViewController)
-        return instance.showDocumentProviderMenu(from: view, parentViewController: parentViewController)
+        return instance.showDocumentProviderMenu(from: view, parentViewController: parentViewController, documentTypes: documentTypes)
     }
 
     /*private*/ init(parentViewController: UIViewController) {
@@ -62,9 +62,9 @@ public class NADocumentPicker : NSObject {
         keepInMemoryUntilComplete()
     }
 
-    private func showDocumentProviderMenu(from view: UIView, parentViewController: UIViewController) -> Future<NSURL, AnyError> {
+    private func showDocumentProviderMenu(from view: UIView, parentViewController: UIViewController, documentTypes: [String]) -> Future<NSURL, AnyError> {
         let activityOverlay = showActivityOverlayAddedTo(parentViewController.view)
-        let documentProviderMenu = UIDocumentMenuViewController(documentTypes:[kUTTypePlainText as String], inMode: UIDocumentPickerMode.Open)
+        let documentProviderMenu = UIDocumentMenuViewController(documentTypes:documentTypes, inMode: UIDocumentPickerMode.Open)
         documentProviderMenu.delegate = self
         if let popoverPresentationController = documentProviderMenu.popoverPresentationController {
             popoverPresentationController.sourceView = view
