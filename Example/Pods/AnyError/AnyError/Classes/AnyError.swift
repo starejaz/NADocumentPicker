@@ -1,11 +1,10 @@
 //
 //  AnyError.swift
-//  iDiffView
 //
-//  NACommonUtils
+//  Swift µframework providing `AnyError(cause:ErrorType)`
 //
-//  Type erasure for ErrorType(s). Designed to be used as the error type associated with a Future - so that when composing futures with man/flatMap the error type is the same and so can be propagated through the compositional chain.
-//  see https://github.com/Thomvis/BrightFutures/issues/115
+//  Type erasure for ErrorType(s). Designed to be used as the error type associated with a Future or Result - so that when composing futures with map/flatMap the error type is the same and can be propagated through the compositional chain.
+//  see http://nickager.com/blog/2016/03/07/AnyError
 //
 //  Created by Nick Ager on 10/02/2016.
 //  Copyright © 2016 RocketBox Ltd. All rights reserved.
