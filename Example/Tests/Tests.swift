@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-@testable import Pods_NADocumentPicker_Example
+@testable import NADocumentPicker
 import BrightFutures
 
 class Tests: XCTestCase {
