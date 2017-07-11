@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var filePickedLabel: UILabel!
     
-    @IBAction func pickerButtonPressed(sender: UIButton) {
+    @IBAction func pickerButtonPressed(_ sender: UIButton) {
         let urlPickedfuture = NADocumentPicker.show(from: sender, parentViewController: self)
         
         urlPickedfuture.onSuccess { url in

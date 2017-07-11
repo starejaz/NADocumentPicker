@@ -3,6 +3,7 @@ import XCTest
 @testable import NADocumentPicker_Example
 @testable import NADocumentPicker
 import BrightFutures
+import Result
 
 class Tests: XCTestCase {
 
