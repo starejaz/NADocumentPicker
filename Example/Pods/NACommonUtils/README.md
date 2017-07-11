@@ -6,6 +6,7 @@
 [![Version](https://img.shields.io/cocoapods/v/NACommonUtils.svg?style=flat)](http://cocoapods.org/pods/NACommonUtils)
 [![License](https://img.shields.io/cocoapods/l/NACommonUtils.svg?style=flat)](http://cocoapods.org/pods/NACommonUtils)
 [![Platform](https://img.shields.io/cocoapods/p/NACommonUtils.svg?style=flat)](http://cocoapods.org/pods/NACommonUtils)
+[![Swift][swift-badge]][swift-url]
 
 Swift utilities and extensions used across a number of iOS apps
 
@@ -22,6 +23,7 @@ Swift utilities and extensions used across a number of iOS apps
 |UIView+Autolayout|Autolayout helpers; `useAutolayout()`, `centerInView(..)`, `constrainToWidth(..)`, `constrainToHeight(..) `|
 |KeepInMemoryMixin|Class mixin to allow the class to keep itself in memory|
 |UIView+NibLoading|`instanceFromNib()` Load an instance of a view from a nib named identically to the class.|
+|UILabel+Measurement|text size measurement|
 
 ## Installation
 
@@ -38,3 +40,6 @@ end
 ---
 
 See [nickager.com/blog/2016/03/04/NACommonUtils](http://nickager.com/blog/2016/03/04/NACommonUtils) for further details.
+
+[swift-badge]: https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat
+[swift-url]: https://swift.org

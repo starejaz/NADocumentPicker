@@ -1,12 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
-use_frameworks!
 
 target 'NADocumentPicker_Example' do
-  inherit! :search_paths
-  pod 'NADocumentPicker', :path => '../'
-end
+  use_frameworks!
 
-target 'NADocumentPicker_Tests' do
-  inherit! :search_paths
   pod 'BrightFutures'
+  pod 'NADocumentPicker', :path => '../'
+
+  target 'NADocumentPicker_Tests' do
+    inherit! :search_paths
+  end
 end

@@ -1,13 +1,11 @@
 PODS:
-  - AnyError (1.0.0)
-  - BrightFutures (4.1.0):
-    - Result (~> 2.0)
-  - NACommonUtils (1.4.0)
-  - NADocumentPicker (1.0.9):
-    - AnyError
+  - BrightFutures (5.2.0):
+    - Result (~> 3.2)
+  - NACommonUtils (2.0.4)
+  - NADocumentPicker (2.0.0):
     - BrightFutures
     - NACommonUtils
-  - Result (2.1.2)
+  - Result (3.2.3)
 
 DEPENDENCIES:
   - BrightFutures
@@ -18,12 +16,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AnyError: 061901d341f2eb896faa23eff8cd5de4dbd3c57a
-  BrightFutures: e18b83fd6fa8562ceb9902ee609f0de23b0ee110
-  NACommonUtils: 191867ed92ec0da25452c7597a51c4c030954456
-  NADocumentPicker: 986051ab7dffd1cc3ac83584f2fc4790a5217f7e
-  Result: 6e722d4a66b1408680dbfcdf51c0b1c4b706316a
+  BrightFutures: 8681dbb9fa831b69b6e7dc4a498b9e081d5daeb5
+  NACommonUtils: 79a6b359cfce77d9127cd327eeca89c5b117aa74
+  NADocumentPicker: ec53174fb973b8573f22215502734f2790df4041
+  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
 
-PODFILE CHECKSUM: e30c90475cc215e1a7575d6edd876c0d5a558f4f
+PODFILE CHECKSUM: 99b256e1d2626be510e85ae849690b33439eed18
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.1

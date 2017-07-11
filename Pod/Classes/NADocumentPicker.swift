@@ -12,7 +12,7 @@
 import UIKit
 import MobileCoreServices
 import BrightFutures
-import AnyError
+import Result
 import NACommonUtils
 
 /**
@@ -25,7 +25,7 @@ public enum NADocumentPickerErrors: Error {
     case noDocumentPicked
     
     func asAnyError() -> AnyError {
-        return AnyError(cause: self)
+        return AnyError(self)
     }
 }
 
@@ -52,7 +52,7 @@ open class NADocumentPicker : NSObject {
      
      - Returns: A `Future` containing the document picked or `NoDocumentPicked`
      */
-    open class func show(from view: UIView, parentViewController: UIViewController, documentTypes: [String] = [kUTTypePlainText as String]) -> Future<NSURL, AnyError> {
+    open class func show(from view: UIView, parentViewController: UIViewController, documentTypes: [String] = [kUTTypePlainText as String]) -> Future<URL, AnyError> {
         let instance = NADocumentPicker(parentViewController: parentViewController)
         return instance.showDocumentProviderMenu(from: view, parentViewController: parentViewController, documentTypes: documentTypes)
     }
@@ -64,8 +64,8 @@ open class NADocumentPicker : NSObject {
         keepInMemoryUntilComplete()
     }
 
-    private func showDocumentProviderMenu(from view: UIView, parentViewController: UIViewController, documentTypes: [String]) -> Future<NSURL, AnyError> {
-        let activityOverlay = showActivityOverlayAddedTo(parentViewController.view)
+    private func showDocumentProviderMenu(from view: UIView, parentViewController: UIViewController, documentTypes: [String]) -> Future<URL, AnyError> {
+        let activityOverlay = showActivityOverlayAddedTo(superview: parentViewController.view)
         let documentProviderMenu = UIDocumentMenuViewController(documentTypes:documentTypes, in: UIDocumentPickerMode.open)
         documentProviderMenu.delegate = self
         if let popoverPresentationController = documentProviderMenu.popoverPresentationController {
@@ -101,14 +101,14 @@ open class NADocumentPicker : NSObject {
 extension NADocumentPicker : UIDocumentMenuDelegate {
     public func documentMenu(_: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
         documentPicker.delegate = self
-        let activityOverlay = showActivityOverlayAddedTo(parentViewController.view)
-        self.parentViewController.presentViewController(documentPicker, animated: true, completion: {
+        let activityOverlay = showActivityOverlayAddedTo(superview:parentViewController.view)
+        self.parentViewController.present(documentPicker, animated: true, completion: {
             activityOverlay.removeFromSuperview()
         })
     }
 
     public func documentMenuWasCancelled(_: UIDocumentMenuViewController) {
-        promise.failure(NADocumentPickerErrors.NoDocumentPicked.asAnyError())
+        promise.failure(NADocumentPickerErrors.noDocumentPicked.asAnyError())
     }
 }
 
@@ -119,6 +119,6 @@ extension NADocumentPicker : UIDocumentPickerDelegate {
     }
 
     public func documentPickerWasCancelled(_: UIDocumentPickerViewController) {
-        promise.failure(NADocumentPickerErrors.NoDocumentPicked.asAnyError())
+        promise.failure(NADocumentPickerErrors.noDocumentPicked.asAnyError())
     }
 }
