@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NADocumentPicker"
-  s.version          = "1.0.9"
+  s.version          = "2.0.0"
   s.summary          = "Encapsulates UIKit document picker UI"
   s.description = <<-DESC
                      Encapsulates UIKit document picker UI.
@@ -19,7 +19,6 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Classes/**/*'
 
   s.frameworks = 'UIKit'
-  s.dependency 'AnyError'
   s.dependency 'NACommonUtils'
   s.dependency 'BrightFutures'
 end

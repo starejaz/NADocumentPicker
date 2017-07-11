@@ -21,8 +21,8 @@ import NACommonUtils
   - NoDocumentPicked: is the error returned by the `Future`
  from `show` when no document is choosen by the user.
  */
-public enum NADocumentPickerErrors: ErrorType {
-    case NoDocumentPicked
+public enum NADocumentPickerErrors: Error {
+    case noDocumentPicked
     
     func asAnyError() -> AnyError {
         return AnyError(cause: self)
@@ -33,10 +33,10 @@ public enum NADocumentPickerErrors: ErrorType {
  Encapsulates UIKit document picker UI, providing a simple API.
  `show` is the only API entry.
 */
-public class NADocumentPicker : NSObject {
-    private let parentViewController: UIViewController
-    private var keepInMemory: NADocumentPicker?
-    /*private*/ let promise = Promise<NSURL, AnyError>()
+open class NADocumentPicker : NSObject {
+    fileprivate let parentViewController: UIViewController
+    fileprivate var keepInMemory: NADocumentPicker?
+    /*private*/ let promise = Promise<URL, AnyError>()
     
     /**
      Shows the document picker, returning a `Future` containing the document picked
@@ -52,7 +52,7 @@ public class NADocumentPicker : NSObject {
      
      - Returns: A `Future` containing the document picked or `NoDocumentPicked`
      */
-    public class func show(from view: UIView, parentViewController: UIViewController, documentTypes: [String] = [kUTTypePlainText as String]) -> Future<NSURL, AnyError> {
+    open class func show(from view: UIView, parentViewController: UIViewController, documentTypes: [String] = [kUTTypePlainText as String]) -> Future<NSURL, AnyError> {
         let instance = NADocumentPicker(parentViewController: parentViewController)
         return instance.showDocumentProviderMenu(from: view, parentViewController: parentViewController, documentTypes: documentTypes)
     }
@@ -66,14 +66,14 @@ public class NADocumentPicker : NSObject {
 
     private func showDocumentProviderMenu(from view: UIView, parentViewController: UIViewController, documentTypes: [String]) -> Future<NSURL, AnyError> {
         let activityOverlay = showActivityOverlayAddedTo(parentViewController.view)
-        let documentProviderMenu = UIDocumentMenuViewController(documentTypes:documentTypes, inMode: UIDocumentPickerMode.Open)
+        let documentProviderMenu = UIDocumentMenuViewController(documentTypes:documentTypes, in: UIDocumentPickerMode.open)
         documentProviderMenu.delegate = self
         if let popoverPresentationController = documentProviderMenu.popoverPresentationController {
             popoverPresentationController.sourceView = view
             popoverPresentationController.sourceRect = view.bounds
         }
 
-        parentViewController.presentViewController(documentProviderMenu, animated: true, completion: {
+        parentViewController.present(documentProviderMenu, animated: true, completion: {
             activityOverlay.removeFromSuperview()
             print("\n</layout-errors>\nSee: http://openradar.appspot.com/19385063\n")
         })
@@ -114,7 +114,7 @@ extension NADocumentPicker : UIDocumentMenuDelegate {
 
 // MARK: UIDocumentPickerDelegate
 extension NADocumentPicker : UIDocumentPickerDelegate {
-    public func documentPicker(_: UIDocumentPickerViewController, didPickDocumentAtURL url: NSURL) {
+    public func documentPicker(_: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
         promise.success(url)
     }
 
