@@ -2,6 +2,7 @@
 
 [![CI Status](http://img.shields.io/travis/NickAger/NADocumentPicker.svg?style=flat)](https://travis-ci.org/NickAger/NADocumentPicker)
 [![Version](https://img.shields.io/cocoapods/v/NADocumentPicker.svg?style=flat)](http://cocoapods.org/pods/NADocumentPicker)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/NADocumentPicker.svg?style=flat)](http://cocoapods.org/pods/NADocumentPicker)
 [![Platform](https://img.shields.io/cocoapods/p/NADocumentPicker.svg?style=flat)](http://cocoapods.org/pods/NADocumentPicker)
 
