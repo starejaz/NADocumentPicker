@@ -1,10 +1,8 @@
 PODS:
   - BrightFutures (5.2.0):
     - Result (~> 3.2)
-  - NACommonUtils (2.0.4)
   - NADocumentPicker (2.0.0):
     - BrightFutures
-    - NACommonUtils
   - Result (3.2.3)
 
 DEPENDENCIES:
@@ -17,10 +15,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   BrightFutures: 8681dbb9fa831b69b6e7dc4a498b9e081d5daeb5
-  NACommonUtils: 79a6b359cfce77d9127cd327eeca89c5b117aa74
-  NADocumentPicker: ec53174fb973b8573f22215502734f2790df4041
+  NADocumentPicker: 1da49852016fc35d069980aa2d20dda0a00611cb
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
 
-PODFILE CHECKSUM: 99b256e1d2626be510e85ae849690b33439eed18
+PODFILE CHECKSUM: 2fefa0d7efdf0597a702cd237c6f75dfd8ea9f00
 
 COCOAPODS: 1.2.1
