@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         
         urlPickedfuture.onSuccess { url in
             self.filePickedLabel.text = "URL: \(url)"
+        }.onFailure { (error) in
+            self.filePickedLabel.text = "No document picked, return code: '\(error)'"
         }
     }
     

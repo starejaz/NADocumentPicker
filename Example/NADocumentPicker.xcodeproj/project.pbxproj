@@ -239,6 +239,7 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = Q32H5S9R95;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -565,6 +566,7 @@
 			baseConfigurationReference = 6C429464C31F57D64E84CF74 /* Pods-NADocumentPicker_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Q32H5S9R95;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -583,6 +585,7 @@
 			baseConfigurationReference = 162E060299001E6BC12C827D /* Pods-NADocumentPicker_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Q32H5S9R95;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

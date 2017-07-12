@@ -13,7 +13,6 @@ import UIKit
 import MobileCoreServices
 import BrightFutures
 import Result
-import NACommonUtils
 
 /**
  Error type for `NADocumentPicker`
@@ -54,7 +53,7 @@ open class NADocumentPicker : NSObject {
      */
     open class func show(from view: UIView, parentViewController: UIViewController, documentTypes: [String] = [kUTTypePlainText as String]) -> Future<URL, AnyError> {
         let instance = NADocumentPicker(parentViewController: parentViewController)
-        return instance.showDocumentProviderMenu(from: view, parentViewController: parentViewController, documentTypes: documentTypes)
+        return instance.showDocumentPicker(from: view, parentViewController: parentViewController, documentTypes: documentTypes)
     }
 
     /*private*/ init(parentViewController: UIViewController) {
@@ -64,17 +63,15 @@ open class NADocumentPicker : NSObject {
         keepInMemoryUntilComplete()
     }
 
-    private func showDocumentProviderMenu(from view: UIView, parentViewController: UIViewController, documentTypes: [String]) -> Future<URL, AnyError> {
-        let activityOverlay = showActivityOverlayAddedTo(superview: parentViewController.view)
-        let documentProviderMenu = UIDocumentMenuViewController(documentTypes:documentTypes, in: UIDocumentPickerMode.open)
-        documentProviderMenu.delegate = self
-        if let popoverPresentationController = documentProviderMenu.popoverPresentationController {
+    private func showDocumentPicker(from view: UIView, parentViewController: UIViewController, documentTypes: [String]) -> Future<URL, AnyError> {
+        let documentPicker = UIDocumentPickerViewController(documentTypes:documentTypes, in: UIDocumentPickerMode.open)
+        documentPicker.delegate = self
+        if let popoverPresentationController = documentPicker.popoverPresentationController {
             popoverPresentationController.sourceView = view
             popoverPresentationController.sourceRect = view.bounds
         }
 
-        parentViewController.present(documentProviderMenu, animated: true, completion: {
-            activityOverlay.removeFromSuperview()
+        parentViewController.present(documentPicker, animated: true, completion: {
             print("\n</layout-errors>\nSee: http://openradar.appspot.com/19385063\n")
         })
 
@@ -94,21 +91,6 @@ open class NADocumentPicker : NSObject {
         self.promise.future.onComplete { [unowned self] _ in
             self.freeOurselvesFromMemory()
         }
-    }
-}
-
-// MARK: UIDocumentMenuDelegate
-extension NADocumentPicker : UIDocumentMenuDelegate {
-    public func documentMenu(_: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
-        documentPicker.delegate = self
-        let activityOverlay = showActivityOverlayAddedTo(superview:parentViewController.view)
-        self.parentViewController.present(documentPicker, animated: true, completion: {
-            activityOverlay.removeFromSuperview()
-        })
-    }
-
-    public func documentMenuWasCancelled(_: UIDocumentMenuViewController) {
-        promise.failure(NADocumentPickerErrors.noDocumentPicked.asAnyError())
     }
 }
 

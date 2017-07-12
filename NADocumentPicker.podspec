@@ -19,6 +19,5 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Classes/**/*'
 
   s.frameworks = 'UIKit'
-  s.dependency 'NACommonUtils'
   s.dependency 'BrightFutures'
 end
