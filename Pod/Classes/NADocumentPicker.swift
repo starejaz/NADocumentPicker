@@ -66,15 +66,8 @@ open class NADocumentPicker : NSObject {
     private func showDocumentPicker(from view: UIView, parentViewController: UIViewController, documentTypes: [String]) -> Future<URL, AnyError> {
         let documentPicker = UIDocumentPickerViewController(documentTypes:documentTypes, in: UIDocumentPickerMode.open)
         documentPicker.delegate = self
-        if let popoverPresentationController = documentPicker.popoverPresentationController {
-            popoverPresentationController.sourceView = view
-            popoverPresentationController.sourceRect = view.bounds
-        }
 
-        parentViewController.present(documentPicker, animated: true, completion: {
-            print("\n</layout-errors>\nSee: http://openradar.appspot.com/19385063\n")
-        })
-
+        parentViewController.present(documentPicker, animated: true)
         return promise.future
     }
 
