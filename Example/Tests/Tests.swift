@@ -10,16 +10,14 @@ class Tests: XCTestCase {
     func testMemoryLeaks() {
         let expectationTest = expectation(description: "Future will complete")
         let vc = UIViewController()
-        weak var dp = NADocumentPicker(parentViewController: vc)
+        let dp = NADocumentPicker(parentViewController: vc)
 
-        if let dp = dp {
-            dp.promise.future.onComplete { [weak dp] _ in
-                XCTAssert(dp == nil, "Expect the instance of NADocumentPicker to have freed itself")
-                expectationTest.fulfill()
-            }
+        dp.promise.future.onComplete { [weak dp] _ in
+            XCTAssert(dp == nil, "Expect the instance of NADocumentPicker to have freed itself")
+            expectationTest.fulfill()
         }
         
-        DispatchQueue.global().async {
+        DispatchQueue.global().async { [weak dp] in
             if let dp = dp {
                 // simulate a failure on a background thread
                 dp.promise.failure(NADocumentPickerErrors.noDocumentPicked.asAnyError())
