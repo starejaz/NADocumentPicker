@@ -1,9 +1,7 @@
 PODS:
-  - BrightFutures (7.0.0):
-    - Result (~> 4.0.0)
-  - NADocumentPicker (3.0.0):
+  - BrightFutures (8.0.0)
+  - NADocumentPicker (3.2.0):
     - BrightFutures
-  - Result (4.0.1)
 
 DEPENDENCIES:
   - BrightFutures
@@ -12,17 +10,15 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BrightFutures
-    - Result
 
 EXTERNAL SOURCES:
   NADocumentPicker:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BrightFutures: 7d7436e937dfc83d814c11920f157fc2a53f5bd5
-  NADocumentPicker: a6b4eb83a945e710f3a917d1c84a30a877db894b
-  Result: a6e784bebf48b471d59cddc1adb81f41f678c487
+  BrightFutures: f8427b46feabaf73c5e71ace7d86d65dfbb47696
+  NADocumentPicker: a64ddaf309b54e6addc014ad49d1acdb3ea5f86e
 
 PODFILE CHECKSUM: b5e57d6297223ed12f8280f4f9db125458d525da
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.0.beta.2

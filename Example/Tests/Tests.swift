@@ -3,7 +3,6 @@ import XCTest
 @testable import NADocumentPicker_Example
 @testable import NADocumentPicker
 import BrightFutures
-import Result
 
 class Tests: XCTestCase {
 
@@ -20,7 +19,7 @@ class Tests: XCTestCase {
         DispatchQueue.global().async { [weak dp] in
             if let dp = dp {
                 // simulate a failure on a background thread
-                dp.promise.failure(NADocumentPickerErrors.noDocumentPicked.asAnyError())
+                dp.promise.failure(NADocumentPickerErrors.noDocumentPicked)
             }
         }
 

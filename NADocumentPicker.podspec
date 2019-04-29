@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NADocumentPicker"
-  s.version          = "3.1.0"
+  s.version          = "3.2.0"
   s.summary          = "Encapsulates UIKit document picker UI"
   s.description = <<-DESC
                      Encapsulates UIKit document picker UI.
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/NickAger'
 
   s.ios.deployment_target = '12.0'
-  s.swift_version = '4.2'
+  s.swift_versions = ['5.0']
   s.platform     = :ios, '12.0'
   s.requires_arc = true
 

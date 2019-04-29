@@ -12,7 +12,6 @@
 import UIKit
 import MobileCoreServices
 import BrightFutures
-import Result
 
 /**
  Error type for `NADocumentPicker`
@@ -22,10 +21,6 @@ import Result
  */
 public enum NADocumentPickerErrors: Error {
     case noDocumentPicked
-    
-    func asAnyError() -> AnyError {
-        return AnyError(self)
-    }
 }
 
 /**
@@ -35,7 +30,7 @@ public enum NADocumentPickerErrors: Error {
 open class NADocumentPicker : NSObject {
     fileprivate let parentViewController: UIViewController
     fileprivate var keepInMemory: NADocumentPicker?
-    /*private*/ let promise = Promise<URL, AnyError>()
+    /*private*/ let promise = Promise<URL, Error>()
     
     /**
      Shows the document picker, returning a `Future` containing the document picked
@@ -51,7 +46,7 @@ open class NADocumentPicker : NSObject {
      
      - Returns: A `Future` containing the document picked or `NoDocumentPicked`
      */
-    open class func show(from view: UIView, parentViewController: UIViewController, documentTypes: [String] = [kUTTypePlainText as String]) -> Future<URL, AnyError> {
+    open class func show(from view: UIView, parentViewController: UIViewController, documentTypes: [String] = [kUTTypePlainText as String]) -> Future<URL, Error> {
         let instance = NADocumentPicker(parentViewController: parentViewController)
         return instance.showDocumentPicker(from: view, parentViewController: parentViewController, documentTypes: documentTypes)
     }
@@ -63,7 +58,7 @@ open class NADocumentPicker : NSObject {
         keepInMemoryUntilComplete()
     }
 
-    private func showDocumentPicker(from view: UIView, parentViewController: UIViewController, documentTypes: [String]) -> Future<URL, AnyError> {
+    private func showDocumentPicker(from view: UIView, parentViewController: UIViewController, documentTypes: [String]) -> Future<URL, Error> {
         let documentPicker = UIDocumentPickerViewController(documentTypes:documentTypes, in: UIDocumentPickerMode.open)
         documentPicker.delegate = self
 
@@ -94,6 +89,6 @@ extension NADocumentPicker : UIDocumentPickerDelegate {
     }
 
     public func documentPickerWasCancelled(_: UIDocumentPickerViewController) {
-        promise.failure(NADocumentPickerErrors.noDocumentPicked.asAnyError())
+        promise.failure(NADocumentPickerErrors.noDocumentPicked)
     }
 }
