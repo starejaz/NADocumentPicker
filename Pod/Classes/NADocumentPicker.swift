@@ -46,9 +46,9 @@ open class NADocumentPicker : NSObject {
      
      - Returns: A `Future` containing the document picked or `NoDocumentPicked`
      */
-    open class func show(from view: UIView, parentViewController: UIViewController, documentTypes: [String] = [kUTTypePlainText as String]) -> Future<URL, Error> {
+    open class func show(from view: UIView, parentViewController: UIViewController, documentTypes: [String] = [kUTTypePlainText as String], mode: UIDocumentPickerMode) -> Future<URL, Error> {
         let instance = NADocumentPicker(parentViewController: parentViewController)
-        return instance.showDocumentPicker(from: view, parentViewController: parentViewController, documentTypes: documentTypes)
+        return instance.showDocumentPicker(from: view, parentViewController: parentViewController, documentTypes: documentTypes, mode: mode)
     }
 
     /*private*/ init(parentViewController: UIViewController) {
@@ -58,8 +58,8 @@ open class NADocumentPicker : NSObject {
         keepInMemoryUntilComplete()
     }
 
-    private func showDocumentPicker(from view: UIView, parentViewController: UIViewController, documentTypes: [String]) -> Future<URL, Error> {
-        let documentPicker = UIDocumentPickerViewController(documentTypes:documentTypes, in: UIDocumentPickerMode.open)
+    private func showDocumentPicker(from view: UIView, parentViewController: UIViewController, documentTypes: [String], mode: UIDocumentPickerMode) -> Future<URL, Error> {
+        let documentPicker = UIDocumentPickerViewController(documentTypes:documentTypes, in: mode)
         documentPicker.delegate = self
 
         parentViewController.present(documentPicker, animated: true)
