@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NADocumentPicker"
-  s.version          = "3.3.0"
+  s.version          = "3.3.1"
   s.summary          = "Encapsulates UIKit document picker UI"
   s.description = <<-DESC
                      Encapsulates UIKit document picker UI.
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.homepage         = "http://nickager.com/blog/2016/03/07/DocumentPicker"
   s.license          = 'MIT'
   s.author           = { "Nick Ager" => "nick.ager@gmail.com" }
-  s.source           = { :git => "https://github.com/NickAger/NADocumentPicker.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/starejaz/NADocumentPicker.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/NickAger'
 
   s.ios.deployment_target = '12.0'
